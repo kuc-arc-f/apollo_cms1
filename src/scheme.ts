@@ -7,9 +7,8 @@ const scheme = {
     return gql`
     type User {
       id: String
-      mail: String
-      name: String
-      password: String
+      email: String
+      createdAt: String
     }
     type Task {
       id: Int

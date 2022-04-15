@@ -14,6 +14,6 @@ export const GQL_QUERY = `
     searchPosts(siteId: Int, seachKey: String): [Post]
     pages(siteId: Int): [Page]
     page(id: Int): Page
-
+    countUser: Int
   }
 `;

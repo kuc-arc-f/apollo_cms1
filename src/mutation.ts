@@ -17,6 +17,7 @@ type Mutation {
   addPage(title: String, content: String!, siteId: Int): Page
   updatePage(id: Int!, title: String, content: String!): Page
   deletePage(id: Int!): Page
+  addUser(email: String): User
   
 }
 `;

@@ -5,6 +5,7 @@ import LibSite from './lib/LibSite';
 import LibCategory from "./lib/LibCategory"
 import LibPost from "./lib/LibPost"
 import LibPage from "./lib/LibPage"
+import LibUser from "./lib/LibUser"
 
 /* resolvers */
 const resolvers = {
@@ -46,7 +47,11 @@ const resolvers = {
     },
     async page(parent, args, context, info){
       return await LibPage.getItem(args.id);
-    },   
+    },  
+    /* user */ 
+    countUser: async (parent, args, context, info) => {
+      return await LibUser.countUser();
+    },
   },
   Mutation: {
     /* tasks */
@@ -115,6 +120,11 @@ const resolvers = {
     },
     deletePage: async (parent, args, context) => {
       const ret = await LibPage.deletePage(args)
+      return ret
+    }, 
+    /* user */
+    addUser: async (parent, args, context) => {
+      const ret = await LibUser.addUser(args)
       return ret
     }, 
 
